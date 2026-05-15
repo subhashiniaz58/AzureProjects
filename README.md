@@ -1,20 +1,56 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# UrbanCOmpanyHomePage ASP.NET Razor Pages
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+UrbanCompanyHomePage is a responsive homepage inspired by Urban Company, built using ASP.NET Razor Pages (Visual Studio).
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Features
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+* Responsive modern UI
+* Hero section
+* Services section
+* Offer cards
+* Google Fonts
+* Google Material Icons
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Technologies Used
+
+* ASP.NET Razor Pages
+* HTML5
+* CSS3
+
+## File Structure
+
+```text
+Pages/
+ └── Index.cshtml
+```
+
+## Run the Project
+
+```bash
+dotnet restore
+dotnet watch run
+```
+
+## Main File
+
+```text
+Pages/Index.cshtml
+```
+
+## External Resources
+
+### Google Fonts
+
+* Poppins Font
+
+### Google Material Icons
+
+* Material Icons CDN
+**Note:Azure Build is not present for this.** 
+## Screenshot
+
+Add your project screenshot here.
+
+## Author
+
+Subhashini

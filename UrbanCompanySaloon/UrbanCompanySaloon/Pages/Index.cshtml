@@ -1,0 +1,406 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Urban Salon Services";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Urban Salon Services</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+            }
+
+            body {
+                background: #faf7f5;
+                color: #222;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 18px 60px;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .logo {
+                font-size: 30px;
+                font-weight: 700;
+                color: #d63384;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 30px;
+            }
+
+            .nav-links a {
+                text-decoration: none;
+                color: #333;
+                font-weight: 500;
+                transition: 0.3s;
+            }
+
+            .nav-links a:hover {
+                color: #d63384;
+            }
+
+            .hero {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                padding: 80px 60px;
+                gap: 60px;
+                background: linear-gradient(to right, #fff0f6, #ffffff);
+            }
+
+            .hero-content h1 {
+                font-size: 58px;
+                line-height: 1.2;
+                margin-bottom: 20px;
+                color: #222;
+            }
+
+            .hero-content span {
+                color: #d63384;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+                color: #666;
+                margin-bottom: 30px;
+            }
+
+            .hero-buttons {
+                display: flex;
+                gap: 20px;
+            }
+
+            .btn-primary {
+                background: #d63384;
+                color: white;
+                padding: 14px 28px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .btn-secondary {
+                background: white;
+                color: #d63384;
+                border: 2px solid #d63384;
+                padding: 14px 28px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .hero-image img {
+                width: 100%;
+                border-radius: 25px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            }
+
+            .services {
+                padding: 80px 60px;
+            }
+
+            .section-title {
+                text-align: center;
+                font-size: 42px;
+                margin-bottom: 50px;
+            }
+
+            .service-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+                gap: 30px;
+            }
+
+            .service-card {
+                background: white;
+                padding: 35px 25px;
+                border-radius: 20px;
+                text-align: center;
+                box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+                transition: 0.3s;
+            }
+
+            .service-card:hover {
+                transform: translateY(-8px);
+            }
+
+            .service-card .material-icons {
+                font-size: 55px;
+                color: #d63384;
+                margin-bottom: 18px;
+            }
+
+            .service-card h3 {
+                margin-bottom: 12px;
+                font-size: 24px;
+            }
+
+            .service-card p {
+                color: #777;
+                font-size: 15px;
+            }
+
+            .offers {
+                padding: 80px 60px;
+                background: white;
+            }
+
+            .offer-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+                gap: 30px;
+            }
+
+            .offer-card {
+                background: linear-gradient(135deg,#d63384,#ff66a3);
+                color: white;
+                padding: 40px;
+                border-radius: 25px;
+            }
+
+            .offer-card h3 {
+                font-size: 32px;
+                margin-bottom: 15px;
+            }
+
+            .offer-card p {
+                margin-bottom: 25px;
+            }
+
+            .offer-card a {
+                display: inline-block;
+                background: white;
+                color: #d63384;
+                padding: 12px 25px;
+                border-radius: 10px;
+                text-decoration: none;
+                font-weight: 600;
+            }
+
+            .gallery {
+                padding: 80px 60px;
+            }
+
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+                gap: 25px;
+            }
+
+            .gallery-grid img {
+                width: 100%;
+                height: 280px;
+                object-fit: cover;
+                border-radius: 20px;
+            }
+
+            .footer {
+                background: #111;
+                color: white;
+                text-align: center;
+                padding: 30px;
+                margin-top: 40px;
+            }
+
+            @@media(max-width:900px){
+
+                .hero{
+                    grid-template-columns:1fr;
+                    text-align:center;
+                }
+
+                .hero-buttons{
+                    justify-content:center;
+                }
+
+                .navbar{
+                    flex-direction:column;
+                    gap:15px;
+                }
+
+            }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">UrbanSalon</div>
+
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#services">Services</a>
+            <a href="#offers">Offers</a>
+            <a href="#gallery">Gallery</a>
+        </div>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Salon Services <span>At Home</span></h1>
+
+            <p>
+                Professional beauty services including haircut,
+                facial, bridal makeup, spa and grooming delivered at your doorstep.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">Book Now</a>
+                <a href="#offers" class="btn-secondary">View Offers</a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?q=80&w=1200&auto=format&fit=crop" alt="Salon Service">
+
+        </div>
+
+    </section>
+
+    <!-- Services -->
+
+    <section class="services" id="services">
+
+        <h2 class="section-title">Popular Salon Services</h2>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <span class="material-icons">content_cut</span>
+                <h3>Hair Styling</h3>
+                <p>Professional haircut and hair styling services.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-icons">face</span>
+                <h3>Facial</h3>
+                <p>Glow facial treatments with premium products.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-icons">spa</span>
+                <h3>Spa & Massage</h3>
+                <p>Relaxing spa and massage at your home.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-icons">brush</span>
+                <h3>Makeup</h3>
+                <p>Party and bridal makeup by professionals.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-icons">self_improvement</span>
+                <h3>Waxing</h3>
+                <p>Safe and hygienic waxing services.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="material-icons">favorite</span>
+                <h3>Skin Care</h3>
+                <p>Complete skincare and beauty solutions.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Offers -->
+
+    <section class="offers" id="offers">
+
+        <h2 class="section-title">Special Offers</h2>
+
+        <div class="offer-container">
+
+            <div class="offer-card">
+                <h3>50% OFF</h3>
+                <p>On first salon booking for new users.</p>
+                <a href="#">Book Now</a>
+            </div>
+
+            <div class="offer-card">
+                <h3>Free Hair Spa</h3>
+                <p>Get free hair spa with haircut combo.</p>
+                <a href="#">Claim Offer</a>
+            </div>
+
+            <div class="offer-card">
+                <h3>Bridal Package</h3>
+                <p>Exclusive bridal makeup combo offers.</p>
+                <a href="#">Explore</a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Gallery -->
+
+    <section class="gallery" id="gallery">
+
+        <h2 class="section-title">Beauty Gallery</h2>
+
+        <div class="gallery-grid">
+
+            <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=1000&auto=format&fit=crop" alt="Salon">
+
+            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop" alt="Makeup">
+
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=1000&auto=format&fit=crop" alt="Beauty">
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <p>© 2026 UrbanSalon. All Rights Reserved.</p>
+
+    </footer>
+
+</body>
+</html>

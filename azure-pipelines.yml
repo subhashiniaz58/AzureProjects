@@ -33,3 +33,11 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
+- task: AzureRmWebAppDeployment@5
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'UrbanComapnyManual'
+    appType: 'webApp'
+    WebAppName: 'ucsaloon'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+
